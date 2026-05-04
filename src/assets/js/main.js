@@ -1,6 +1,6 @@
 // Add your javascript here
 
-window.darkMode = false;
+window.darkMode = true;
 
 const stickyClasses = ["fixed", "h-14"];
 const unstickyClasses = ["absolute", "h-20"];
@@ -17,14 +17,12 @@ let headerElement = null;
 document.addEventListener("DOMContentLoaded", () => {
 	headerElement = document.getElementById("header");
 
-	if (
-		localStorage.getItem("dark_mode") &&
-		localStorage.getItem("dark_mode") === "true"
-	) {
+	if (localStorage.getItem("dark_mode") === "false") {
+		window.darkMode = false;
+		showDay();
+	} else {
 		window.darkMode = true;
 		showNight();
-	} else {
-		showDay();
 	}
 	stickyHeaderFuncionality();
 	applyMenuItemClasses();

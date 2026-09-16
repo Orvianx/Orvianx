@@ -1,3 +1,9 @@
+---
+title: How P2P Secure Chat Avoids 99% of Communication Security Failures
+description: Why most "secure" messaging apps fail at the architectural level, and how a pure peer-to-peer design eliminates entire categories of risk.
+dateFormatted: May 29, 2026
+---
+
 # How P2P Secure Chat Avoids 99% of Communication Security Failures
 
 Modern messaging apps promise "secure" communication, yet data breaches,

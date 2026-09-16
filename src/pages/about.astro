@@ -9,7 +9,7 @@ import Layout from "../layouts/main.astro";
   <section class="relative z-20 max-w-2xl mx-auto my-12 px-7 lg:px-0">
     <PageHeading
       title="About Me"
-      description="Hello 👋 I'm a frontend engineer from Nanjing, China. I'm passionate about building new products and learning new technology."
+      description="Hello 👋 I'm a Software Developer. I focus on building scalable and maintainable software."
     />
 
     <img src="/assets/images/about.jpg" class="relative z-30 w-full my-10 rounded-xl" />
@@ -18,19 +18,20 @@ import Layout from "../layouts/main.astro";
     <p
       class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
     >
-      Front-end cutter 🧑🏻‍💻, back-end amateur 🤷🏻‍♂️, operations digging holes person 🤦🏻‍♂️.
+      I'm a Software Developer, passionate about system design,
+      web, mobile and backend development, cloud computing and DevOps. I care
+      about building maintainable software, automating the boring stuff, and
+      shipping reliable products.
     </p>
 
-    <h2
-      class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200"
-    >
+    <h2 class="mt-5 mb-2 text-2xl font-bold lg:mt-10 sm:mt-6 dark:text-neutral-200">
       Experience
     </h2>
     <div class="px-5 py-10">
       {
         experiences.map((experience) => {
           return (
-            <div class="pb-10 border-l border-gray-200 last:border-l-0 dark:border-neutral-700">
+            <div class="pb-10 border-l border-gray-200 last:pb-0 dark:border-neutral-700">
               <AboutExperience
                 dates={experience.dates}
                 role={experience.role}
@@ -48,13 +49,11 @@ import Layout from "../layouts/main.astro";
     <p
       class="text-sm leading-6 text-gray-600 dark:text-neutral-400 sm:leading-7 lg:leading-8 sm:text-base lg:text-lg"
     >
-      If you want to stay up to date with my work be sure to <a
-        href="https://x.com/0xKaibi"
+      If you want to stay up to date with my work, feel free to <a
+        href="https://www.linkedin.com/in/hamza-madani"
         target="_blank"
-        class="text-indigo-600 underline">follow me on twitter</a
-      >, or you can send me an <a href="mailto:astro-aria#miantiao.me" class="text-indigo-600 underline"
-        >email</a
-      > and I'll be sure to get back to you.
+        class="text-indigo-600 underline">connect with me on LinkedIn</a
+      >.
     </p>
   </section>
 </Layout>

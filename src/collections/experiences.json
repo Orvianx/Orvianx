@@ -1,23 +1,23 @@
 [
 	{
-		"dates": "June 2018 · Present",
-		"role": "Front-end Engineer",
-		"company": "Full Truck Alliance",
-		"description": "Responsible for customer service and CRM system front-end development.",
-		"logo": "/assets/images/experiences/fta.ico"
+		"dates": "Dec 2025 · Present",
+		"role": "System Administrator",
+		"company": "Mohammed V University in Rabat",
+		"description": "Full-time · On-site · Rabat, Morocco. System administration duties for the university's IT infrastructure.",
+		"logo": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23f5f5f5'/><text x='50' y='50' dy='.35em' text-anchor='middle' font-family='Arial' font-size='40' fill='%23333'>U</text></svg>"
 	},
 	{
-		"dates": "July 2015 · June 2018",
-		"role": "Front-end Engineer",
-		"company": "YOHO!",
-		"description": "Responsible for mobile front-end development of e-commerce platform.",
-		"logo": "/assets/images/experiences/yoho.ico"
+		"dates": "Oct 2022 · Oct 2023",
+		"role": "Java Software Developer",
+		"company": "BROCKHAUS AG",
+		"description": "Full-time · On-site · Casablanca, Morocco. Development and Docker containerization, Docker image management, and deployments on AWS infrastructure. Spring Framework, Hibernate and more.",
+		"logo": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23f5f5f5'/><text x='50' y='50' dy='.35em' text-anchor='middle' font-family='Arial' font-size='40' fill='%23333'>B</text></svg>"
 	},
 	{
-		"dates": "September 2014 · July 2015 ",
-		"role": "Node.JS Developer",
-		"company": "WuLian",
-		"description": "Intern, involved in the development of Internet of Things cloud systems.",
-		"logo": "/assets/images/experiences/wulian.ico"
+		"dates": "Mar 2022 · Sep 2022",
+		"role": "Full-stack Developer",
+		"company": "SupporteK consulting and training",
+		"description": "Internship · Hybrid · Casablanca-Settat, Morocco. School Management Application project; Back-End development with Spring Boot. Java JEE, Git, testing and debugging.",
+		"logo": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23f5f5f5'/><text x='50' y='50' dy='.35em' text-anchor='middle' font-family='Arial' font-size='40' fill='%23333'>S</text></svg>"
 	}
 ]

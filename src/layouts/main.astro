@@ -111,9 +111,17 @@ const person = {
     <Fragment set:html={import.meta.env.HEADER_INJECT} />
   </head>
   <body class="antialiased bg-white dark:bg-neutral-950">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-neutral-900 focus:shadow-lg dark:focus:bg-neutral-900 dark:focus:text-white"
+    >
+      Skip to content
+    </a>
     <SquareLines />
     <Header />
-    <slot />
+    <main id="main-content" tabindex="-1" class="outline-none">
+      <slot />
+    </main>
     <Footer />
     <script src="../assets/js/main.js"></script>
     <Fragment set:html={import.meta.env.FOOTER_INJECT} />

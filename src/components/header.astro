@@ -1,6 +1,8 @@
 ---
 import menus from "../collections/menu.json";
 import Logo from "../components/logo.astro";
+
+const currentPath = Astro.url.pathname.replace(/\/+$/, "") || "/";
 ---
 
 <!-- This is an invisible div with relative position so that it takes up the height of the menu (because menu is absolute/fixed) -->
@@ -10,20 +12,28 @@ import Logo from "../components/logo.astro";
     class="flex items-center justify-between h-full max-w-5xl pl-6 pr-4 mx-auto border-b border-l-0 border-r-0 border-transparent select-none lg:border-r lg:border-l lg:rounded-b-xl"
   >
     <Logo />
-    <div
+    <button
+      type="button"
       id="mobileMenuBackground"
-      onclick="closeMobileMenu()"
-      class="fixed inset-0 z-20 hidden w-screen h-screen duration-300 ease-out bg-white/90 dark:bg-neutral-950/90"
+      aria-label="Close menu"
+      class="fixed inset-0 z-20 hidden w-screen h-screen duration-300 ease-out bg-white/90 dark:bg-neutral-950/90 sm:hidden"
     >
-    </div>
+    </button>
     <nav
+      aria-label="Main navigation"
       class="relative z-30 flex flex-row-reverse justify-start w-full text-sm sm:justify-end text-neutral-500 dark:text-neutral-400 sm:flex-row"
     >
-      <div
+      <button
+        type="button"
         id="openMenu"
+        aria-label="Open menu"
+        aria-controls="menu"
+        aria-expanded="false"
         class="flex flex-col items-end justify-center w-6 h-6 ml-4 cursor-pointer sm:hidden"
       >
         <svg
+          aria-hidden="true"
+          focusable="false"
           class="w-8 h-8 dark:text-neutral-200"
           fill="none"
           stroke-linecap="round"
@@ -32,12 +42,18 @@ import Logo from "../components/logo.astro";
           viewBox="0 0 24 24"
           stroke="currentColor"><path d="M4 8h16M4 16h16"></path></svg
         >
-      </div>
-      <div
+      </button>
+      <button
+        type="button"
         id="closeMenu"
+        aria-label="Close menu"
+        aria-controls="menu"
+        aria-expanded="false"
         class="flex flex-col items-end justify-center hidden w-6 h-6 ml-4 -translate-x-1 cursor-pointer sm:hidden"
       >
         <svg
+          aria-hidden="true"
+          focusable="false"
           class="w-6 h-6 text-neutral-600 dark:text-neutral-200"
           fill="none"
           stroke-linecap="round"
@@ -46,7 +62,7 @@ import Logo from "../components/logo.astro";
           viewBox="0 0 24 24"
           stroke="currentColor"><path d="M6 18L18 6M6 6l12 12"></path></svg
         >
-      </div>
+      </button>
       <div
         id="menu"
         class="fixed top-[75px] ease-out duration-300 sm:top-0 w-full left-0 sm:py-0 pt-7 pb-4 dm:mx-0 left-0 z-40 flex-col items-end justify-start hidden w-full h-auto text-sm sm:text-base sm:h-auto sm:relative sm:flex-row sm:flex sm:text-sm sm:w-auto sm:pr-0 sm:pt-0"
@@ -64,6 +80,7 @@ import Logo from "../components/logo.astro";
             return (
               <a
                 href={menu.url}
+                aria-current={currentPath === menu.url ? "page" : undefined}
                 class="relative flex items-center justify-center w-full px-3 py-2 font-medium tracking-wide text-center duration-200 ease-out sm:py-0 sm:mb-0 md:w-auto hover:text-neutral-900 dark:hover:text-white"
               >
                 {menu.name}
@@ -72,14 +89,19 @@ import Logo from "../components/logo.astro";
           })
         }
       </div>
-      <div
+      <button
+        type="button"
         id="darkToggle"
+        aria-label="Switch to dark mode"
+        aria-pressed="false"
         class="relative flex items-center pl-6 ml-4 font-medium tracking-wide cursor-pointer text-neutral-800 group dark:text-white"
       >
-        <div
+        <span
           class="absolute left-0 flex items-center justify-center w-6 h-6 overflow-hidden border-b border-transparent horizon group-hover:border-neutral-600"
         >
           <svg
+            aria-hidden="true"
+            focusable="false"
             class="absolute w-6 h-6 transition duration-700 transform ease"
             id="sun"
             fill="none"
@@ -93,6 +115,8 @@ import Logo from "../components/logo.astro";
             ></path></svg
           >
           <svg
+            aria-hidden="true"
+            focusable="false"
             class="absolute hidden w-6 h-6 transition duration-700 transform ease"
             id="moon"
             fill="none"
@@ -105,12 +129,12 @@ import Logo from "../components/logo.astro";
               d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
             ></path></svg
           >
-        </div>
+        </span>
         <span class="hidden sm:inline-block">
           <span id="dayText" class="ml-2">Day mode</span>
           <span id="nightText" class="hidden ml-2">Night mode</span>
         </span>
-      </div>
+      </button>
     </nav>
   </div>
 </header>

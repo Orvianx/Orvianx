@@ -15,7 +15,11 @@ import Layout from "../layouts/main.astro";
       description="Hello 👋 I'm a Software Developer. I focus on building scalable and maintainable software."
     />
 
-    <img src="/assets/images/about.jpg" class="relative z-30 w-full my-10 rounded-xl" />
+    <img
+      src="/assets/images/about.jpg"
+      alt="Hamza Madani"
+      class="relative z-30 w-full my-10 rounded-xl"
+    />
 
     <h2 class="mb-2 text-2xl font-bold dark:text-neutral-200">Short Bio</h2>
     <p
@@ -55,7 +59,11 @@ import Layout from "../layouts/main.astro";
       If you want to stay up to date with my work, feel free to <a
         href="https://www.linkedin.com/in/hamza-madani"
         target="_blank"
-        class="text-indigo-600 underline">connect with me on LinkedIn</a
+        rel="noopener noreferrer"
+        class="text-indigo-600 underline dark:text-indigo-400"
+        >connect with me on LinkedIn<span class="sr-only">
+          (opens in a new tab)</span
+        ></a
       >.
     </p>
   </section>

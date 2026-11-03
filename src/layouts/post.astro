@@ -8,7 +8,7 @@ const { frontmatter } = Astro.props;
   description={frontmatter.description}
   type="article"
 >
-  <main
+  <div
     class="relative z-30 max-w-4xl pb-1 mx-auto mt-10 bg-white dark:bg-neutral-950 md:rounded-t-md text-neutral-900"
   >
     <div
@@ -34,5 +34,5 @@ const { frontmatter } = Astro.props;
     >
       <slot />
     </article>
-  </main>
+  </div>
 </Layout>

@@ -1,7 +1,5 @@
 // Add your javascript here
 
-window.darkMode = true;
-
 const stickyClasses = ["fixed", "h-14"];
 const unstickyClasses = ["absolute", "h-20"];
 const stickyClassesContainer = [
@@ -17,29 +15,16 @@ let headerElement = null;
 document.addEventListener("DOMContentLoaded", () => {
 	headerElement = document.getElementById("header");
 
-	if (localStorage.getItem("dark_mode") === "false") {
-		window.darkMode = false;
-		showDay();
-	} else {
-		window.darkMode = true;
+	if (document.documentElement.classList.contains("dark")) {
 		showNight();
+	} else {
+		showDay();
 	}
 	stickyHeaderFuncionality();
 	applyMenuItemClasses();
 	evaluateHeaderPosition();
 	mobileMenuFunctionality();
 });
-
-// window.toggleDarkMode = function(){
-//     document.documentElement.classList.toggle('dark');
-//     if(document.documentElement.classList.contains('dark')){
-//         localStorage.setItem('dark_mode', true);
-//         window.darkMode = true;
-//     } else {
-//         window.darkMode = false;
-//         localStorage.setItem('dark_mode', false);
-//     }
-// }
 
 window.stickyHeaderFuncionality = () => {
 	window.addEventListener("scroll", () => {
@@ -71,10 +56,10 @@ document.getElementById("darkToggle").addEventListener("click", () => {
 	document.documentElement.classList.add("duration-300");
 
 	if (document.documentElement.classList.contains("dark")) {
-		localStorage.removeItem("dark_mode");
+		localStorage.setItem("dark_mode", "false");
 		showDay(true);
 	} else {
-		localStorage.setItem("dark_mode", true);
+		localStorage.setItem("dark_mode", "true");
 		showNight(true);
 	}
 });

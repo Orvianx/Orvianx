@@ -3,7 +3,41 @@ import Footer from "../components/footer.astro";
 import Header from "../components/header.astro";
 import SquareLines from "../components/square-lines.astro";
 import "../assets/css/main.css";
-const { title = "Hamza Madani — Orvianx" } = Astro.props;
+
+const {
+  title = "Hamza Madani — Orvianx",
+  description = "Hamza Madani is a software developer in Morocco focused on building scalable and maintainable software, systems, and products.",
+  image = "/assets/images/cover.png",
+  type = "website",
+} = Astro.props;
+
+const siteName = "Hamza Madani — Orvianx";
+const baseURL = Astro.site ?? Astro.url;
+const canonicalURL = new URL(Astro.url.pathname, baseURL);
+const imageURL = new URL(image, baseURL);
+const rssURL = new URL("/rss.xml", baseURL);
+
+const person = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Hamza Madani",
+  alternateName: "Orvianx",
+  url: new URL("/", baseURL).toString(),
+  image: imageURL.toString(),
+  jobTitle: "Software Developer",
+  sameAs: [
+    "https://github.com/Orvianx",
+    "https://www.linkedin.com/in/hamza-madani",
+  ],
+  knowsAbout: [
+    "System Design",
+    "Web Development",
+    "Mobile Development",
+    "Backend Development",
+    "Cloud Computing",
+    "DevOps",
+  ],
+};
 ---
 
 <!doctype html>
@@ -12,6 +46,47 @@ const { title = "Hamza Madani — Orvianx" } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Hamza Madani" />
+    <link rel="canonical" href={canonicalURL.toString()} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`${siteName} RSS`}
+      href={rssURL.toString()}
+    />
+    <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#0a0a0a"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL.toString()} />
+    <meta property="og:image" content={imageURL.toString()} />
+    <meta property="og:image:alt" content={`${siteName} cover image`} />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageURL.toString()} />
+
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(person)}
+    />
 
     <!-- Used to add dark mode right away, adding here prevents any flicker -->
     <script is:inline>
@@ -31,7 +106,8 @@ const { title = "Hamza Madani — Orvianx" } = Astro.props;
         border-radius: 20px;
       }
     </style>
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png" />
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="/assets/images/favicon.png" />
     <Fragment set:html={import.meta.env.HEADER_INJECT} />
   </head>
   <body class="antialiased bg-white dark:bg-neutral-950">

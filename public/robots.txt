@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://orvianx.orvianx.workers.dev/sitemap-index.xml

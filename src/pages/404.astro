@@ -1,0 +1,31 @@
+---
+import Button from "../components/button.astro";
+import Layout from "../layouts/main.astro";
+---
+
+<Layout
+  title="Page Not Found — Hamza Madani"
+  description="The page you are looking for could not be found."
+>
+  <section class="relative z-20 max-w-2xl mx-auto my-32 px-7 text-center">
+    <p
+      class="text-sm font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500"
+    >
+      404
+    </p>
+    <h1
+      class="mt-4 text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-5xl"
+    >
+      Page not found
+    </h1>
+    <p
+      class="mx-auto mt-4 max-w-md text-base text-neutral-600 dark:text-neutral-400"
+    >
+      The page you're looking for doesn't exist or has moved.
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-3 mt-8">
+      <Button text="Back home" link="/" />
+      <Button text="View projects" link="/projects" />
+    </div>
+  </section>
+</Layout>
